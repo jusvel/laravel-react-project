@@ -1,0 +1,54 @@
+{
+    "default-layout": {
+        "header": "Conference Manager",
+        "logout": "Logout",
+        "login": "Login",
+        "greet": "Hello, "
+    },
+    "login": {
+        "header": "Login into your account",
+        "email": "Email",
+        "password": "Password",
+        "submit": "Login"
+    },
+    "conferences": {
+        "header": "Conferences",
+        "add": "Add New",
+        "title": "Title",
+        "description": "Description",
+        "date": "Date",
+        "city": "City",
+        "actions": "Actions",
+        "action-delete": "Delete",
+        "action-edit": "Edit",
+        "action-view": "View details"
+    },
+    "loading": {
+        "loading": "Loading..."
+    },
+    "conference-form": {
+        "new-conference": "New Conference",
+        "edit-conference": "Edit Conference",
+        "view-conference": "View Conference",
+        "title": "Title",
+        "description": "Description",
+        "date": "Date",
+        "address": "Address",
+        "city": "City",
+        "number-of-participants": "Number of participants",
+        "organizer": "Organizer",
+        "save": "Save",
+        "back": "Back"
+    },
+    "notifications": {
+        "conference-updated": "Conference was successfully updated",
+        "conference-deleted": "Conference was successfully deleted",
+        "conference-created": "Conference was successfully created"
+    },
+    "confirmations": {
+        "delete-conference": "Are you sure you want to delete this conference?"
+    },
+    "errors": {
+        "server-error": "Server error, please try again later"
+    }
+}

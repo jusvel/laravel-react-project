@@ -1,0 +1,55 @@
+{
+    "default-layout": {
+        "header": "Konferencijų valdymo sistema",
+        "logout": "Atsijungti",
+        "login": "Prisijungti",
+        "greet": "Sveiki, "
+    },
+    "login": {
+        "header": "Prisijunkite prie savo paskyros",
+        "email": "El. paštas",
+        "password": "Slaptažodis",
+        "submit": "Prisijungti",
+        "error": "Neteisingas vartotojo vardas arba slaptažodis"
+    },
+    "conferences": {
+        "header": "Konferencijos",
+        "add": "Pridėti",
+        "title": "Pavadinimas",
+        "description": "Aprašymas",
+        "date": "Data",
+        "city": "Miestas",
+        "actions": "Veiksmai",
+        "action-delete": "Ištrinti",
+        "action-edit": "Redaguoti",
+        "action-view": "Peržiūrėti"
+    },
+    "loading": {
+        "loading": "Loading..."
+    },
+    "conference-form": {
+        "new-conference": "Nauja konferencija",
+        "edit-conference": "Redaguoti konferenciją",
+        "view-conference": "Peržiūrėti konferenciją",
+        "title": "Pavadinimas",
+        "description": "Aprašymas",
+        "date": "Data",
+        "address": "Adresas",
+        "city": "Miestas",
+        "number-of-participants": "Dalyvių skaičius",
+        "organizer": "Organizatorius",
+        "save": "Išsaugoti",
+        "back": "Atgal"
+    },
+    "notifications": {
+        "conference-updated": "Konferencija sėkmingai atnaujinta",
+        "conference-deleted": "Konferencija sėkmingai ištrinta",
+        "conference-created": "Konferencija sėkmingai sukurta"
+    },
+    "confirmations": {
+        "delete-conference": "Ar tikrai norite ištrinti šią konferenciją?"
+    },
+    "errors": {
+        "server-error": "Serverio klaida, pamėginkite dar kartą vėliau"
+    }
+}

@@ -1,6 +1,7 @@
 import {createRef, useState} from "react";
 import {useStateContext} from "../contexts/ContextProvider.jsx";
 import axiosClient from "../axios-client.js";
+import LanguagePicker from "../components/LanguagePicker.jsx";
 
 export default function Login() {
     const emailRef = createRef();
@@ -35,23 +36,28 @@ export default function Login() {
     }
 
     return (
-        <div>
+        <>
             <div>
-                <form onSubmit={onSubmit}>
-                    <h1>
-                        Login
-                    </h1>
-                    {errors &&
-                        <div>
-                            {Object.keys(errors).map(key => (<p key={key}>{errors[key][0]}</p>))}
-                        </div>}
+                <div>
+                    <form onSubmit={onSubmit}>
+                        <h1>
+                            Login
+                        </h1>
+                        {errors &&
+                            <div>
+                                {Object.keys(errors).map(key => (<p key={key}>{errors[key][0]}</p>))}
+                            </div>}
 
-                    <input ref={emailRef} type="email" placeholder="Email"/>
-                    <input ref={passwordRef} type="password" placeholder="Password"/>
-                    <button>login</button>
+                        <input ref={emailRef} type="email" placeholder="Email"/>
+                        <input ref={passwordRef} type="password" placeholder="Password"/>
+                        <button>login</button>
 
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+            <div style={{position: "absolute", top: 0, right: 0, margin: "20px"}}>
+                <LanguagePicker/>
+            </div>
+        </>
     )
 }

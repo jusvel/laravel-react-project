@@ -4,6 +4,7 @@ import './index.css'
 import {RouterProvider} from "react-router-dom";
 import router from "./router.jsx";
 import {ContextProvider} from "./contexts/ContextProvider.jsx";
+import './i18n.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
