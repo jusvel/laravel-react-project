@@ -39,20 +39,20 @@ export default function Login() {
 
     return (
         <>
-            <div>
-                <div>
+            <div className="login-form animated fadeInDown">
+                <div className="form">
                     <form onSubmit={onSubmit}>
-                        <h1>
+                        <h1 className="title">
                             {t("login.header")}
                         </h1>
                         {errors &&
-                            <div>
+                            <div className="alert">
                                 {Object.keys(errors).map(key => (<p key={key}>{errors[key][0]}</p>))}
                             </div>}
 
                         <input ref={emailRef} type="email" placeholder={t("login.email")}/>
                         <input ref={passwordRef} type="password" placeholder={t("login.password")}/>
-                        <button>{t("login.submit")}</button>
+                        <button className="btn btn-block">{t("login.submit")}</button>
 
                     </form>
                 </div>

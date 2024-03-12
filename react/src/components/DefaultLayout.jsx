@@ -24,26 +24,26 @@ export default function DefaultLayout() {
     }, [])
 
     return (
-        <div>
-            <div>
+        <div id="defaultLayout">
+            <div className="content">
                 <header>
                     <h1>
                         {t('default-layout.header')}
                     </h1>
-                    <div>
+                    <div className="header-controls">
                         <LanguagePicker/>
                         {token &&
                             <>
                                 <strong>
                                     {t('default-layout.greet')} {user.name}
                                 </strong>
-                                <button onClick={handleLogout}>
+                                <button className="btn-logout" onClick={handleLogout}>
                                     {t("default-layout.logout")}
                                 </button>
                             </>
                         }
                         {!token &&
-                            <Link to={'/login'}>
+                            <Link to={'/login'} className="btn-login">
                                 {t("default-layout.login")}
                             </Link>
                         }

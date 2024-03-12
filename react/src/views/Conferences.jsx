@@ -27,11 +27,11 @@ export default function Conferences() {
 
     return (
         <div>
-            <div>
-                <h1>{t("conferences.header")}</h1>
-                {token && <Link to="/conferences/new">{t("conferences.add")}</Link>}
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <h2>{t("conferences.header")}</h2>
+                {token && <Link to="/conferences/new" className="btn-add">{t("conferences.add")}</Link>}
             </div>
-            <div>
+            <div className="card animated fadeInDown">
                 <table>
                     <thead>
                     <tr>
@@ -45,7 +45,7 @@ export default function Conferences() {
                     {loading &&
                         <tbody>
                         <tr>
-                            <td colSpan="5">
+                            <td colSpan="5" className="text-center">
                                 {t("loading.loading")}
                             </td>
                         </tr>
@@ -61,13 +61,14 @@ export default function Conferences() {
                                 <td>{c.city}</td>
                                 {token ?
                                     <td>
-                                        <Link to={`/conferences/${c.id}`}>{t('conferences.action-edit')}</Link>
+                                        <Link to={`/conferences/${c.id}`}
+                                              className="btn-edit">{t('conferences.action-edit')}</Link>
                                         <>&nbsp;</>
-                                        <button>{t('conferences.action-delete')}</button>
+                                        <button className="btn-delete">{t('conferences.action-delete')}</button>
                                     </td>
                                     :
                                     <td>
-                                        <Link to={`/conferences/${c.id}`}>
+                                        <Link to={`/conferences/${c.id}`} className="btn-edit">
                                             {t("conferences.action-view")}
                                         </Link>
                                     </td>
