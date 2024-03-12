@@ -2,12 +2,14 @@ import {createRef, useState} from "react";
 import {useStateContext} from "../contexts/ContextProvider.jsx";
 import axiosClient from "../axios-client.js";
 import LanguagePicker from "../components/LanguagePicker.jsx";
+import {useTranslation} from "react-i18next";
 
 export default function Login() {
     const emailRef = createRef();
     const passwordRef = createRef();
     const {setUser, setToken} = useStateContext();
     const [errors, setErrors] = useState(null);
+    const {t} = useTranslation();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -41,16 +43,16 @@ export default function Login() {
                 <div>
                     <form onSubmit={onSubmit}>
                         <h1>
-                            Login
+                            {t("login.header")}
                         </h1>
                         {errors &&
                             <div>
                                 {Object.keys(errors).map(key => (<p key={key}>{errors[key][0]}</p>))}
                             </div>}
 
-                        <input ref={emailRef} type="email" placeholder="Email"/>
-                        <input ref={passwordRef} type="password" placeholder="Password"/>
-                        <button>login</button>
+                        <input ref={emailRef} type="email" placeholder={t("login.email")}/>
+                        <input ref={passwordRef} type="password" placeholder={t("login.password")}/>
+                        <button>{t("login.submit")}</button>
 
                     </form>
                 </div>
