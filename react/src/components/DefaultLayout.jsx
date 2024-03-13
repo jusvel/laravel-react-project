@@ -1,4 +1,4 @@
-import {Link, Outlet} from "react-router-dom";
+import {Link, Outlet, useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {useStateContext} from "../contexts/ContextProvider.jsx";
 import axiosClient from "../axios-client.js";
@@ -8,6 +8,7 @@ import LanguagePicker from "./LanguagePicker.jsx";
 export default function DefaultLayout() {
     const {t} = useTranslation();
     const {user, token, setUser, setToken} = useStateContext()
+    const navigate = useNavigate();
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -27,7 +28,7 @@ export default function DefaultLayout() {
         <div id="defaultLayout">
             <div className="content">
                 <header>
-                    <h1>
+                    <h1 onClick={() => navigate('/')} className="btn-logout" style={{fontSize: '40px'}}>
                         {t('default-layout.header')}
                     </h1>
                     <div className="header-controls">
