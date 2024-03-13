@@ -7,7 +7,7 @@ import {useTranslation} from "react-i18next";
 export default function Login() {
     const emailRef = createRef();
     const passwordRef = createRef();
-    const {setUser, setToken} = useStateContext();
+    const {setUser, setToken, setNotification} = useStateContext();
     const [errors, setErrors] = useState(null);
     const {t} = useTranslation();
 
@@ -23,6 +23,7 @@ export default function Login() {
         axiosClient.post('/login', payload).then(({data}) => {
             setUser(data.user);
             setToken(data.token);
+            setNotification(t("notifications.logged-in"));
         }).catch(err => {
             const response = err.response;
             if (response && response.status === 422) {

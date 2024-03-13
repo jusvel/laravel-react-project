@@ -43,7 +43,10 @@
     "notifications": {
         "conference-updated": "Conference was successfully updated",
         "conference-deleted": "Conference was successfully deleted",
-        "conference-created": "Conference was successfully created"
+        "conference-created": "Conference was successfully created",
+        "language-changed": "Language was successfully changed",
+        "logged-out": "You were successfully logged out",
+        "logged-in": "You were successfully logged in"
     },
     "confirmations": {
         "delete-conference": "Are you sure you want to delete this conference?"

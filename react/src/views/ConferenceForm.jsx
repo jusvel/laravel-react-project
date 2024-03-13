@@ -12,7 +12,7 @@ export default function ConferenceForm() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
-    const {token} = useStateContext();
+    const {token, setNotification} = useStateContext();
     const [conference, setConference] = useState({
         id: null,
         name: '',
@@ -43,6 +43,7 @@ export default function ConferenceForm() {
         if (conference.id) {
             axiosClient.patch(`conferences/${conference.id}`, conference)
                 .then(() => {
+                    setNotification(t("notifications.conference-updated"));
                     navigate('/conferences');
                 }).catch((err) => {
                 const response = err.response;
@@ -53,6 +54,7 @@ export default function ConferenceForm() {
         } else {
             axiosClient.post('/conferences', conference)
                 .then(() => {
+                    setNotification(t("notifications.conference-created"));
                     navigate('/conferences');
                 }).catch((err) => {
                 const response = err.response;

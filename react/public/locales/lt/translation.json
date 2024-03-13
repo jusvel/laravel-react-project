@@ -44,7 +44,10 @@
     "notifications": {
         "conference-updated": "Konferencija sėkmingai atnaujinta",
         "conference-deleted": "Konferencija sėkmingai ištrinta",
-        "conference-created": "Konferencija sėkmingai sukurta"
+        "conference-created": "Konferencija sėkmingai sukurta",
+        "language-changed": "Kalba sėkmingai pakeista",
+        "logged-out": "Sėkmingai atsijungta",
+        "logged-in": "Sėkmingai prisijungta"
     },
     "confirmations": {
         "delete-conference": "Ar tikrai norite ištrinti šią konferenciją?"

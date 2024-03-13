@@ -14,6 +14,16 @@ export default function Conferences() {
         getConferences()
     }, []);
 
+    const onDelete = (conference) => {
+        if (!window.confirm(t('confirmations.delete-conference'))) {
+            return
+        }
+        axiosClient.delete('/conferences/' + conference.id).then(() => {
+            setNotification(t('notifications.conference-deleted'))
+            getConferences();
+        })
+    }
+
     const getConferences = () => {
         setLoading(true)
         axiosClient.get('/conferences').then(({data}) => {
@@ -64,7 +74,8 @@ export default function Conferences() {
                                         <Link to={`/conferences/${c.id}`}
                                               className="btn-edit">{t('conferences.action-edit')}</Link>
                                         <>&nbsp;</>
-                                        <button className="btn-delete">{t('conferences.action-delete')}</button>
+                                        <button className="btn-delete"
+                                                onClick={e => onDelete(c)}>{t('conferences.action-delete')}</button>
                                     </td>
                                     :
                                     <td>

@@ -7,7 +7,7 @@ import LanguagePicker from "./LanguagePicker.jsx";
 
 export default function DefaultLayout() {
     const {t} = useTranslation();
-    const {user, token, setUser, setToken} = useStateContext()
+    const {user, token, setUser, setToken, notification, setNotification} = useStateContext()
     const navigate = useNavigate();
 
     const handleLogout = (e) => {
@@ -15,6 +15,7 @@ export default function DefaultLayout() {
         axiosClient.post('/logout').then(() => {
             setUser({});
             setToken(null);
+            setNotification(t("notifications.logged-out"));
         });
     }
 
@@ -54,6 +55,11 @@ export default function DefaultLayout() {
                     <Outlet/>
                 </main>
             </div>
+            {notification &&
+                <div className="notification">
+                    {notification}
+                </div>
+            }
         </div>
     )
 }
